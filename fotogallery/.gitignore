@@ -1,0 +1,8 @@
+# exclude private directory
+/nbproject/private/
+
+# exclude node_module directory
+node_modules
+
+# exclude .sass-cache directory
+.sass-cache
