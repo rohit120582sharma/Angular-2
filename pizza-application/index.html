@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Pizza Application</title>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+		<meta name="description" content="Pizza Application">
+		<meta name="author" content="Rohit Sharma">
+
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/animate.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
+		<link rel="stylesheet" type="text/css" href="assets/fancybox/jquery.fancybox.css">
+
+		<style>
+			.mb30{
+				margin-bottom: 30px;
+			}
+			.search{
+				width: 100%;
+				padding: 10px;
+			}
+			.comp-menu-item{
+				border: 1px solid #0079ae;
+				border-radius: 5px;
+				padding: 20px;
+				text-align: center;
+			}
+			h4{
+				color: #0079ae;
+				text-transform: uppercase;
+			}
+			.comp-menu-item .img-thumb{
+				margin: auto;
+			}
+			.btn{
+				display: inline-block;
+				padding: 0 20px;
+				font-size: 16px;
+				line-height: 32px;
+				color: #fff;
+				background-color: #2e2e2e;
+				border-radius: 4px;
+				box-shadow: #000000 0 3px 0;
+			}
+			.btnBlue{
+				color: #fff;
+				background-color: #0079ae;
+				box-shadow: #005f89 0 3px 0;
+			}
+			.btnBlue:hover, .btnBlue:active, .btnBlue:focus{
+				text-decoration: none;
+				color: #fff;
+				background-color: #005f89;
+				box-shadow: #003f89 0 3px 0;
+			}
+			.modal-dialog{
+				z-index: 1050;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mainWrapper">
+			<!-- Header - Start -->
+			<header></header>
+
+			<!-- Section - End -->
+			<menus-component>loading...</menus-component>
+
+			<!-- Footer - Start -->
+			<footer></footer>
+		</div>
+
+		<!-- Vendor Script - Start -->
+		<script type="text/javascript" src="assets/js/vendor/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="assets/js/vendor/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/vendor/verge.min.js"></script>
+		<script type="text/javascript" src="assets/js/vendor/slick.min.js"></script>
+		<script type="text/javascript" src="assets/js/vendor/TweenMax.min.js"></script>
+		<script type="text/javascript" src="assets/js/vendor/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="assets/js/vendor/additional-methods.js"></script>
+		<script type="text/javascript" src="assets/js/vendor/jquery.matchHeight.js"></script>
+		<script type="text/javascript" src="assets/fancybox/jquery.fancybox.js"></script>
+		<script type="text/javascript" src="assets/fancybox/jquery.fancybox.pack.js"></script>
+
+		<!-- 1. Angular Libraries - Start -->
+		<!-- Polyfill for older browsers -->
+		<script src="node_modules/core-js/client/shim.min.js"></script>
+		<script src="node_modules/zone.js/dist/zone.js"></script>
+		<script src="node_modules/reflect-metadata/Reflect.js"></script>
+		<script src="node_modules/systemjs/dist/system.src.js"></script>
+
+		<!-- 2. Configure SystemJS -->
+		<script src="systemjs.config.js"></script>
+		<script>
+			System.import('app').catch(function(err){ console.error(err); });
+		</script>
+	</body>
+</html>

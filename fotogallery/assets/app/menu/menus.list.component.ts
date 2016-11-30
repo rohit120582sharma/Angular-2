@@ -29,6 +29,6 @@ export class MenusListComponent{
 	}
 	editHandler(val:any){
 		this.menusService.setSelectedMenu(val);
-		jQuery("#menuModal").modal();
+		//jQuery("#menuModal").modal();
 	}
 }

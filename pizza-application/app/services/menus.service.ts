@@ -1,8 +1,9 @@
 import { Injectable } from "@angular/core";
 
-@Injectable()
+Injectable()
 export class MenusService{
-	private data:any = [
+	// -------------------- Variables --------------------
+	private menus:any = [
 		{
 			"thumb": "assets/images/vegextra.png",
 			"title": "Veg Extravaganza"
@@ -20,17 +21,23 @@ export class MenusService{
 			"title": "Peppy Paneer"
 		}
 	];
-	private selectedMenu:any;
+	private selectedMenu:any = {
+	};
 
+	// -------------------- Methods --------------------
+	// constructor
 	constructor(){
 	}
-	public getMenusData(){
-		return this.data;
+	// get and set for menus data
+	public getMenus():any{
+		return this.menus;
 	}
-	public getSelectedMenu(){
+	// get and set for search query
+	public getSelectedMenu():any{
 		return this.selectedMenu;
 	}
 	public setSelectedMenu(val:any){
 		this.selectedMenu = val;
+		console.log(this.selectedMenu.title);
 	}
 }
