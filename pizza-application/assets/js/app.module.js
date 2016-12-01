@@ -13,6 +13,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var http_1 = require("@angular/http");
 var forms_1 = require("@angular/forms");
+var angular2_infinite_scroll_1 = require('angular2-infinite-scroll');
 // Components/Views
 var menus_component_1 = require("./components/menus/menus.component");
 var menus_search_component_1 = require("./components/menus/menus.search.component");
@@ -31,7 +32,8 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 http_1.HttpModule,
-                forms_1.FormsModule
+                forms_1.FormsModule,
+                angular2_infinite_scroll_1.InfiniteScrollModule
             ],
             providers: [
                 menus_service_1.MenusService

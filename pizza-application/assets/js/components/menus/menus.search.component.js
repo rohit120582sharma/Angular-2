@@ -18,18 +18,28 @@ var MenusSearchComponent = (function () {
         // -------------------- Input/Output --------------------
         this.searchInput = new core_1.EventEmitter();
     }
-    // search handler
-    MenusSearchComponent.prototype.searchHandler = function () {
-        this.searchInput.emit(this.search);
-    };
+    Object.defineProperty(MenusSearchComponent.prototype, "search", {
+        // search handler
+        get: function () {
+            return this.searchVal;
+        },
+        set: function (val) {
+            if (val !== this.searchVal) {
+                this.searchVal = val;
+                this.searchInput.emit(this.searchVal);
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
     __decorate([
-        core_1.Output(), 
+        core_1.Output('searchInput'), 
         __metadata('design:type', Object)
     ], MenusSearchComponent.prototype, "searchInput", void 0);
     MenusSearchComponent = __decorate([
         core_1.Component({
             selector: 'search-component',
-            template: "\n\t\t<div class=\"container mb30\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-xs-12\">\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"search\" name=\"search\" placeholder=\"Search\" [(ngModel)]=\"search\" (ngModelChange)=\"searchHandler()\" />\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t"
+            template: "\n\t\t<div class=\"container mb30\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-xs-12\">\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"search\" name=\"search\" placeholder=\"Search\" [(ngModel)]=\"search\" />\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t"
         }), 
         __metadata('design:paramtypes', [menus_service_1.MenusService])
     ], MenusSearchComponent);

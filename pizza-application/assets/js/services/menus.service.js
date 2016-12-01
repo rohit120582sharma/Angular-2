@@ -22,6 +22,86 @@ var MenusService = (function () {
             {
                 "thumb": "assets/images/peppypaneer.png",
                 "title": "Peppy Paneer"
+            },
+            {
+                "thumb": "assets/images/vegextra.png",
+                "title": "Veg Extravaganza"
+            },
+            {
+                "thumb": "assets/images/Cloud9.jpg",
+                "title": "Cloud 9"
+            },
+            {
+                "thumb": "assets/images/ChefsVegWonderMain9.jpg",
+                "title": "Chef's Veg Wonder"
+            },
+            {
+                "thumb": "assets/images/peppypaneer.png",
+                "title": "Peppy Paneer"
+            },
+            {
+                "thumb": "assets/images/vegextra.png",
+                "title": "Veg Extravaganza"
+            },
+            {
+                "thumb": "assets/images/Cloud9.jpg",
+                "title": "Cloud 9"
+            },
+            {
+                "thumb": "assets/images/ChefsVegWonderMain9.jpg",
+                "title": "Chef's Veg Wonder"
+            },
+            {
+                "thumb": "assets/images/peppypaneer.png",
+                "title": "Peppy Paneer"
+            },
+            {
+                "thumb": "assets/images/vegextra.png",
+                "title": "Veg Extravaganza"
+            },
+            {
+                "thumb": "assets/images/Cloud9.jpg",
+                "title": "Cloud 9"
+            },
+            {
+                "thumb": "assets/images/ChefsVegWonderMain9.jpg",
+                "title": "Chef's Veg Wonder"
+            },
+            {
+                "thumb": "assets/images/peppypaneer.png",
+                "title": "Peppy Paneer"
+            },
+            {
+                "thumb": "assets/images/vegextra.png",
+                "title": "Veg Extravaganza"
+            },
+            {
+                "thumb": "assets/images/Cloud9.jpg",
+                "title": "Cloud 9"
+            },
+            {
+                "thumb": "assets/images/ChefsVegWonderMain9.jpg",
+                "title": "Chef's Veg Wonder"
+            },
+            {
+                "thumb": "assets/images/peppypaneer.png",
+                "title": "Peppy Paneer"
+            },
+            {
+                "thumb": "assets/images/vegextra.png",
+                "title": "Veg Extravaganza"
+            },
+            {
+                "thumb": "assets/images/Cloud9.jpg",
+                "title": "Cloud 9"
+            },
+            {
+                "thumb": "assets/images/ChefsVegWonderMain9.jpg",
+                "title": "Chef's Veg Wonder"
+            },
+            {
+                "thumb": "assets/images/peppypaneer.png",
+                "title": "Peppy Paneer"
             }
         ];
         this.selectedMenu = {};

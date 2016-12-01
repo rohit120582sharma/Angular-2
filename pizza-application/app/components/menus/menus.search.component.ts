@@ -7,7 +7,7 @@ import { MenusService } from "../../services/menus.service";
 		<div class="container mb30">
 			<div class="row">
 				<div class="col-xs-12">
-					<input type="text" class="form-control" id="search" name="search" placeholder="Search" [(ngModel)]="search" (ngModelChange)="searchHandler()" />
+					<input type="text" class="form-control" id="search" name="search" placeholder="Search" [(ngModel)]="search" />
 				</div>
 			</div>
 		</div>
@@ -15,17 +15,23 @@ import { MenusService } from "../../services/menus.service";
 })
 export class MenusSearchComponent{
 	// -------------------- Input/Output --------------------
-	@Output() searchInput = new EventEmitter<string>();
+	@Output('searchInput') searchInput = new EventEmitter<string>();
 
 	// -------------------- Variables --------------------
-	private search:string;
+	private searchVal:string;
 
 	// -------------------- Methods --------------------
 	// constructor
 	constructor(private menusService:MenusService){
 	}
 	// search handler
-	searchHandler(){
-		this.searchInput.emit(this.search);
+	get search():string{
+		return this.searchVal;
+	}
+	set search(val:string){
+		if(val !== this.searchVal){
+			this.searchVal = val;
+			this.searchInput.emit(this.searchVal);
+		}
 	}
 }

@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpModule } from "@angular/http";
 import { FormsModule } from "@angular/forms";
+import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 // Components/Views
 import { MenusComponent } from "./components/menus/menus.component";
 import { MenusSearchComponent } from "./components/menus/menus.search.component";
@@ -18,7 +19,8 @@ import { MenusSearchPipe } from "./pipes/menus.search.pipe";
 	imports:[
 		BrowserModule,
 		HttpModule,
-		FormsModule
+		FormsModule,
+		InfiniteScrollModule
 	],
 	providers:[
 		MenusService
