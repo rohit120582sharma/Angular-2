@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Pizza Application</title>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+		<meta name="description" content="Pizza Application">
+		<meta name="author" content="Rohit Sharma">
+
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+		<style>
+			.heading{
+				text-transform: uppercase;
+			}
+			.componentPhoto{
+				text-align: center;
+				margin-bottom: 30px;
+			}
+			.componentPhoto .topWrapper{
+				text-align: right;
+			}
+			.componentPhoto .topWrapper .title {
+				float: left;
+				font-weight: 600;
+			}
+			.componentPhoto .topWrapper ul.tools{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			.componentPhoto .topWrapper ul.tools li{
+				display: inline-block;
+				margin-left: -4px;
+			}
+			.componentPhoto .topWrapper ul.tools li a{
+				display: block;
+				padding: 5px;
+			}
+			.componentPhoto .imgWrapper{
+				position: relative;
+				display: inline-block;
+			}
+			.componentPhoto .imgWrapper > img{
+				display: block;
+			}
+			.componentPhoto .imgWrapper ul.tagWrapper{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				z-index: 1;
+			}
+			.componentPhoto .imgWrapper ul.tagWrapper li{
+				position: absolute;
+				left: 50%;
+				top: 50%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mainWrapper">
+			<!-- Header - Start -->
+			<header></header>
+
+			<!-- Section - End -->
+			<photos-component>loading...</photos-component>
+
+			<!-- Footer - Start -->
+			<footer></footer>
+		</div>
+
+		<!-- Vendor Script - Start -->
+		<script type="text/javascript" src="assets/js/vendor/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="assets/js/vendor/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/vendor/jquery.matchHeight.js"></script>
+
+		<!-- 1. Angular Libraries - Start -->
+		<!-- Polyfill for older browsers -->
+		<script src="node_modules/core-js/client/shim.min.js"></script>
+		<script src="node_modules/zone.js/dist/zone.js"></script>
+		<script src="node_modules/reflect-metadata/Reflect.js"></script>
+		<script src="node_modules/systemjs/dist/system.src.js"></script>
+
+		<!-- 2. Configure SystemJS -->
+		<script src="systemjs.config.js"></script>
+		<script>
+			System.import('app').catch(function(err){ console.error(err); });
+		</script>
+	</body>
+</html>
