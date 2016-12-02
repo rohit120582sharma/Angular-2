@@ -1,10 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Http, Response } from "@angular/http";
 import { Observable } from 'rxjs/Observable';
-// Operators and Statics
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/throw';
+// adds ALL RxJS statics & operators to Observable
+import 'rxjs/Rx';
 
 @Injectable()
 export class PhotosService{
@@ -15,20 +13,37 @@ export class PhotosService{
 	// constructor
 	constructor(private http:Http){
 	}
-	// fetch photo data
+	// http request to fetch photo data
 	public getPhotosHandler(){
 		return this.http.get(this._photosDataURL)
-						.map(this._photosDataReceiveHandler)
+						.map(this._photosDataSuccessHandler)
 						.catch(this._photosDataErrorHandler);
 	}
-	private _photosDataReceiveHandler(res:Response){
-		alert("success");
+	private _photosDataSuccessHandler(res:Response){
 		let body = res.json();
-		return body.data || [];
+		return body || [];
 	}
 	private _photosDataErrorHandler(error:Response){
-		alert("error");
-		let errMsg: string = error.message ? error.message : error.toString();
+		let errMsg:String = "";
+		if(error instanceof Response){
+			errMsg = error.json() || '';
+		}else{
+			errMsg = error;
+		}
 		return Observable.throw(errMsg);
+	}
+	// tag handlers
+	addTag(photoObj:any){
+		let tags = photoObj.tags;
+		let length = String(tags.length);
+		let tag:any = {
+			"id": length,
+			"message": "",
+			"x": "50%",
+			"y": "50%"
+		}
+		tags.push(tag);
+	}
+	removeTagHandler(){
 	}
 }
