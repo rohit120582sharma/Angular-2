@@ -44,7 +44,7 @@ var PhotosService = (function () {
     // tag handlers
     PhotosService.prototype.addTag = function (photoObj) {
         var tags = photoObj.tags;
-        var length = String(tags.length);
+        var length = String(tags.length + 1);
         var tag = {
             "id": length,
             "message": "",
@@ -52,8 +52,11 @@ var PhotosService = (function () {
             "y": "50%"
         };
         tags.push(tag);
+        console.log(tag);
     };
-    PhotosService.prototype.removeTagHandler = function () {
+    PhotosService.prototype.removeTag = function (photoObj, tagIndex) {
+        var tags = photoObj.tags;
+        tags.splice(tagIndex, 1);
     };
     PhotosService = __decorate([
         core_1.Injectable(), 

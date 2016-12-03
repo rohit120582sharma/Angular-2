@@ -15,6 +15,8 @@ var http_1 = require("@angular/http");
 var forms_1 = require("@angular/forms");
 // Components/Views
 var photo_list_component_1 = require("./components/photo.list.component");
+var photo_list_item_component_1 = require("./components/photo.list.item.component");
+var nginit_directive_1 = require("./directives/nginit.directive");
 // Services
 var photos_service_1 = require("./services/photos.service");
 // Pipe/Filer
@@ -33,7 +35,9 @@ var AppModule = (function () {
                 photos_service_1.PhotosService
             ],
             declarations: [
-                photo_list_component_1.PhotoListComponent
+                photo_list_component_1.PhotoListComponent,
+                photo_list_item_component_1.PhotoListItemComponent,
+                nginit_directive_1.NgInitDirective
             ],
             bootstrap: [
                 photo_list_component_1.PhotoListComponent

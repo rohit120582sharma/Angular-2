@@ -33,9 +33,9 @@ export class PhotosService{
 		return Observable.throw(errMsg);
 	}
 	// tag handlers
-	addTag(photoObj:any){
+	public addTag(photoObj:any){
 		let tags = photoObj.tags;
-		let length = String(tags.length);
+		let length = String(tags.length+1);
 		let tag:any = {
 			"id": length,
 			"message": "",
@@ -43,7 +43,10 @@ export class PhotosService{
 			"y": "50%"
 		}
 		tags.push(tag);
+		console.log(tag);
 	}
-	removeTagHandler(){
+	public removeTag(photoObj:any, tagIndex:Number){
+		let tags = photoObj.tags;
+		tags.splice(tagIndex, 1);
 	}
 }

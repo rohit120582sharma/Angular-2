@@ -1,8 +1,8 @@
 [
 	{
 		"id": "1",
-		"title": "Plant",
-		"image": "assets/images/work-1.jpg",
+		"title": "Food",
+		"image": "assets/images/food.jpg",
 		"tags": [
 			{
 				"id": "1",
@@ -14,8 +14,8 @@
 	},
 	{
 		"id": "2",
-		"title": "Ant",
-		"image": "assets/images/work-2.jpg",
+		"title": "landscape",
+		"image": "assets/images/landscape.jpg",
 		"tags": [
 			{
 				"id": "1",
@@ -33,8 +33,8 @@
 	},
 	{
 		"id": "3",
-		"title": "Ground",
-		"image": "assets/images/work-3.jpg",
+		"title": "desert",
+		"image": "assets/images/desert-2.jpg",
 		"tags": [
 			{
 				"id": "1",
@@ -52,8 +52,8 @@
 	},
 	{
 		"id": "4",
-		"title": "Ant",
-		"image": "assets/images/work-2.jpg",
+		"title": "autumn",
+		"image": "assets/images/autumn.jpg",
 		"tags": [
 			{
 				"id": "1",

@@ -37,6 +37,7 @@
 				background-color: #e2e2e2;
 			}
 			.componentPhoto .topWrapper .title {
+				text-transform: capitalize;
 				font-weight: 600;
 				margin: 0;
 			}
@@ -56,29 +57,52 @@
 				display: block;
 				padding: 5px;
 			}
-			/* img and tags wrapper */
+			/* Tags and Bg-Image wrapper */
 			.componentPhoto .imgWrapper{
 				position: relative;
 				height: 100%;
-				background-size: cover;
-				background-position: center;
+				background-size: contain;
+				background-position: center center;
 				background-repeat: no-repeat;
 			}
 			.componentPhoto .imgWrapper ul.tagWrapper{
-				position: absolute;
-				left: 0;
-				top: 0;
-				width: 100%;
+				position: relative;
 				height: 100%;
 				padding: 0;
 				margin: 0;
 				list-style: none;
-				z-index: 1;
 			}
 			.componentPhoto .imgWrapper ul.tagWrapper li{
 				position: absolute;
 				left: 0%;
 				top: 0%;
+				cursor: pointer;
+			}
+			/* Message Wrapper */
+			.componentPhoto .messageWrapper{
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+			}
+			.componentPhoto .messageWrapper .message{
+				width: 100%;
+				padding: 10px;
+				text-align: center;
+				border: 0;
+				background-color: rgba(0,0,0,0.5);
+				color: #fff;
+			}
+			.componentPhoto .messageWrapper ul{
+				position: absolute;
+				width: 70px;
+				right: 0;
+				bottom: 30px;
+				padding: 0;
+				list-style: none;
+			}
+			.componentPhoto .messageWrapper ul li{
+				display: inline-block;
+				margin-left: -4px;
 				cursor: pointer;
 			}
 		</style>
@@ -99,6 +123,7 @@
 		<!-- Vendor Script - Start -->
 		<script type="text/javascript" src="assets/js/vendor/jquery-1.11.2.min.js"></script>
 		<script type="text/javascript" src="assets/js/vendor/jquery-ui.js"></script>
+		<script type="text/javascript" src="assets/js/vendor/jquery.ui.touch-punch.min.js"></script>
 		<script type="text/javascript" src="assets/js/vendor/bootstrap.min.js"></script>
 		<script type="text/javascript" src="assets/js/vendor/jquery.matchHeight.js"></script>
 

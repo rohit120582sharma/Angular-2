@@ -5,6 +5,8 @@ import { HttpModule } from "@angular/http";
 import { FormsModule } from "@angular/forms";
 // Components/Views
 import { PhotoListComponent } from "./components/photo.list.component";
+import { PhotoListItemComponent } from "./components/photo.list.item.component";
+import { NgInitDirective } from "./directives/nginit.directive";
 // Services
 import { PhotosService } from "./services/photos.service";
 // Pipe/Filer
@@ -20,7 +22,9 @@ import { PhotosService } from "./services/photos.service";
 		PhotosService
 	],
 	declarations:[
-		PhotoListComponent
+		PhotoListComponent,
+		PhotoListItemComponent,
+		NgInitDirective
 	],
 	bootstrap:[
 		PhotoListComponent
