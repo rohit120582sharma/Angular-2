@@ -80,7 +80,7 @@ var PhotoListItemComponent = (function () {
         }
         this._disabled = !this._disabled;
         setTimeout(function () {
-            console.log(_this.index);
+            //console.log(this.index);
             var inputElem = document.getElementsByClassName("message")[_this.index];
             if (inputElem) {
                 inputElem.focus();

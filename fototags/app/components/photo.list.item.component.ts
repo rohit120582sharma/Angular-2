@@ -44,7 +44,7 @@ declare var document:any;
 export class PhotoListItemComponent{
 	// ------------------------------- Input/Output -------------------------------
 	@Input('photo') photo:any;
-	@Input('index') index:Number;
+	@Input('index') index:number;
 
 	// ------------------------------- Variables -------------------------------
 	private _isHide:Boolean = false;
@@ -115,7 +115,7 @@ export class PhotoListItemComponent{
 		}
 		this._disabled = !this._disabled;
 		setTimeout(()=>{
-			console.log(this.index);
+			//console.log(this.index);
 			let inputElem = document.getElementsByClassName("message")[this.index];
 			if(inputElem){
 				inputElem.focus();
