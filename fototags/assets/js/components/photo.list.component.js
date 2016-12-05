@@ -27,7 +27,7 @@ var PhotoListComponent = (function () {
     PhotoListComponent = __decorate([
         core_1.Component({
             selector: 'photos-component',
-            template: "\n\t\t<div class=\"container\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-xs-12\">\n\t\t\t\t\t<h1 class=\"heading text-center\">Foto Tags</h1>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-xs-12 col-sm-6 col-md-6\" *ngFor=\"let photo of _photosArr;\">\n\t\t\t\t\t<photo-list-item-component [photo]=\"photo\"></photo-list-item-component>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t"
+            template: "\n\t\t<div class=\"container\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-xs-12\">\n\t\t\t\t\t<h1 class=\"heading text-center\">Foto Tags</h1>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-xs-12 col-sm-6 col-md-6\" *ngFor=\"let photo of _photosArr; let i = index;\">\n\t\t\t\t\t<photo-list-item-component [photo]=\"photo\" [index]=\"i\"></photo-list-item-component>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t"
         }), 
         __metadata('design:paramtypes', [photos_service_1.PhotosService])
     ], PhotoListComponent);

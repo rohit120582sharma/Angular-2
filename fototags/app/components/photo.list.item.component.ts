@@ -36,7 +36,7 @@ declare var document:any;
 					<li><a href="#" (click)="editTagHandler($event)"><img class="img-responsive" src="assets/images/icon-pencil.png"></a></li>
 					<li><a href="#" (click)="removeTagHandler($event)"><img class="img-responsive" src="assets/images/icon-delete.png"></a></li>
 				</ul>
-				<input id="message" class="message" type="text" name="message" [(ngModel)]="_selectedTag.message" [disabled]="_disabled">
+				<input class="message" type="text" name="message" [(ngModel)]="_selectedTag.message" [disabled]="_disabled">
 			</div>
 		</div>
 	`
@@ -44,6 +44,7 @@ declare var document:any;
 export class PhotoListItemComponent{
 	// ------------------------------- Input/Output -------------------------------
 	@Input('photo') photo:any;
+	@Input('index') index:Number;
 
 	// ------------------------------- Variables -------------------------------
 	private _isHide:Boolean = false;
@@ -112,10 +113,10 @@ export class PhotoListItemComponent{
 		if(event){
 			event.stopPropagation();
 		}
-		console.log(this._disabled);
 		this._disabled = !this._disabled;
-		setTimeout(function(){
-			let inputElem = document.getElementById("message");
+		setTimeout(()=>{
+			console.log(this.index);
+			let inputElem = document.getElementsByClassName("message")[this.index];
 			if(inputElem){
 				inputElem.focus();
 			}

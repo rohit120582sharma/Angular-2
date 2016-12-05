@@ -73,14 +73,15 @@ var PhotoListItemComponent = (function () {
         return false;
     };
     PhotoListItemComponent.prototype.editTagHandler = function (event) {
+        var _this = this;
         if (event === void 0) { event = undefined; }
         if (event) {
             event.stopPropagation();
         }
-        console.log(this._disabled);
         this._disabled = !this._disabled;
         setTimeout(function () {
-            var inputElem = document.getElementById("message");
+            console.log(_this.index);
+            var inputElem = document.getElementsByClassName("message")[_this.index];
             if (inputElem) {
                 inputElem.focus();
             }
@@ -98,10 +99,14 @@ var PhotoListItemComponent = (function () {
         core_1.Input('photo'), 
         __metadata('design:type', Object)
     ], PhotoListItemComponent.prototype, "photo", void 0);
+    __decorate([
+        core_1.Input('index'), 
+        __metadata('design:type', Number)
+    ], PhotoListItemComponent.prototype, "index", void 0);
     PhotoListItemComponent = __decorate([
         core_1.Component({
             selector: 'photo-list-item-component',
-            template: "\n\t\t<div class=\"componentPhoto\">\n\t\t\t<!-- Top Wrapper -->\n\t\t\t<div class=\"topWrapper\">\n\t\t\t\t<h4 class=\"title\">{{photo.title}}</h4>\n\t\t\t\t<ul class=\"tools\">\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a href=\"#\" (click)=\"tagsVisibleHandler($event)\" [style.opacity]=\"_isHide?0.2:1\"><img class=\"img-responsive\" src=\"assets/images/icon-show.png\"></a>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a href=\"#\" (click)=\"addTagHandler($event)\"><img class=\"img-responsive\" src=\"assets/images/icon-add-comment.png\"></a>\n\t\t\t\t\t</li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\n\t\t\t<!-- Tags -->\n\t\t\t<div class=\"imgWrapper\" [style.background-image]=\"'url(' + photo.image + ')'\">\n\t\t\t\t<ul class=\"tagWrapper\" *ngIf=\"!_isHide\" (click)=\"bgClickHandler($event)\">\n\t\t\t\t\t<li class=\"draggable ui-widget-content\" #liElem *ngFor=\"let tag of photo.tags; let i = index;\" [ngStyle]=\"setTagPosition(tag.x, tag.y)\" [ngInit]=\"tagInitHandler(tag, liElem)\" (click)=\"tagClickHandler($event, tag, i)\">\n\t\t\t\t\t\t<img class=\"img-responsive\" src=\"assets/images/icon-comment.png\">\n\t\t\t\t\t</li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\n\t\t\t<!-- Message Wrapper -->\n\t\t\t<div class=\"messageWrapper\" *ngIf=\"_selectedTag\">\n\t\t\t\t<ul>\n\t\t\t\t\t<li><a href=\"#\" (click)=\"editTagHandler($event)\"><img class=\"img-responsive\" src=\"assets/images/icon-pencil.png\"></a></li>\n\t\t\t\t\t<li><a href=\"#\" (click)=\"removeTagHandler($event)\"><img class=\"img-responsive\" src=\"assets/images/icon-delete.png\"></a></li>\n\t\t\t\t</ul>\n\t\t\t\t<input id=\"message\" class=\"message\" type=\"text\" name=\"message\" [(ngModel)]=\"_selectedTag.message\" [disabled]=\"_disabled\">\n\t\t\t</div>\n\t\t</div>\n\t"
+            template: "\n\t\t<div class=\"componentPhoto\">\n\t\t\t<!-- Top Wrapper -->\n\t\t\t<div class=\"topWrapper\">\n\t\t\t\t<h4 class=\"title\">{{photo.title}}</h4>\n\t\t\t\t<ul class=\"tools\">\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a href=\"#\" (click)=\"tagsVisibleHandler($event)\" [style.opacity]=\"_isHide?0.2:1\"><img class=\"img-responsive\" src=\"assets/images/icon-show.png\"></a>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a href=\"#\" (click)=\"addTagHandler($event)\"><img class=\"img-responsive\" src=\"assets/images/icon-add-comment.png\"></a>\n\t\t\t\t\t</li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\n\t\t\t<!-- Tags -->\n\t\t\t<div class=\"imgWrapper\" [style.background-image]=\"'url(' + photo.image + ')'\">\n\t\t\t\t<ul class=\"tagWrapper\" *ngIf=\"!_isHide\" (click)=\"bgClickHandler($event)\">\n\t\t\t\t\t<li class=\"draggable ui-widget-content\" #liElem *ngFor=\"let tag of photo.tags; let i = index;\" [ngStyle]=\"setTagPosition(tag.x, tag.y)\" [ngInit]=\"tagInitHandler(tag, liElem)\" (click)=\"tagClickHandler($event, tag, i)\">\n\t\t\t\t\t\t<img class=\"img-responsive\" src=\"assets/images/icon-comment.png\">\n\t\t\t\t\t</li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\n\t\t\t<!-- Message Wrapper -->\n\t\t\t<div class=\"messageWrapper\" *ngIf=\"_selectedTag\">\n\t\t\t\t<ul>\n\t\t\t\t\t<li><a href=\"#\" (click)=\"editTagHandler($event)\"><img class=\"img-responsive\" src=\"assets/images/icon-pencil.png\"></a></li>\n\t\t\t\t\t<li><a href=\"#\" (click)=\"removeTagHandler($event)\"><img class=\"img-responsive\" src=\"assets/images/icon-delete.png\"></a></li>\n\t\t\t\t</ul>\n\t\t\t\t<input class=\"message\" type=\"text\" name=\"message\" [(ngModel)]=\"_selectedTag.message\" [disabled]=\"_disabled\">\n\t\t\t</div>\n\t\t</div>\n\t"
         }), 
         __metadata('design:paramtypes', [photos_service_1.PhotosService])
     ], PhotoListItemComponent);
