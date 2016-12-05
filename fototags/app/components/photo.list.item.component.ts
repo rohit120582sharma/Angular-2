@@ -2,6 +2,7 @@ import { Component, Input } from "@angular/core";
 import { PhotosService } from "../services/photos.service";
 
 declare var jQuery:any;
+declare var document:any;
 
 @Component({
 	selector: 'photo-list-item-component',
@@ -32,10 +33,10 @@ declare var jQuery:any;
 			<!-- Message Wrapper -->
 			<div class="messageWrapper" *ngIf="_selectedTag">
 				<ul>
-					<li><a href="#" (click)="editTagHandler($event, message)"><img class="img-responsive" src="assets/images/icon-pencil.png"></a></li>
+					<li><a href="#" (click)="editTagHandler($event)"><img class="img-responsive" src="assets/images/icon-pencil.png"></a></li>
 					<li><a href="#" (click)="removeTagHandler($event)"><img class="img-responsive" src="assets/images/icon-delete.png"></a></li>
 				</ul>
-				<input #message class="message" type="text" name="message" [(ngModel)]="_selectedTag.message" [disabled]="_disabled">
+				<input id="message" class="message" type="text" name="message" [(ngModel)]="_selectedTag.message" [disabled]="_disabled">
 			</div>
 		</div>
 	`
@@ -95,8 +96,11 @@ export class PhotoListItemComponent{
 		return false;
 	}
 	private addTagHandler(event){
-		this.photosService.addTag(this.photo);
-		this.bgClickHandler();
+		//this.photosService.addTag(this.photo);
+		//this.bgClickHandler();
+		this._selectedTag = this.photosService.addTag(this.photo);
+		this._disabled = true;
+		this.editTagHandler();
 		return false;
 	}
 	private removeTagHandler(event){
@@ -104,11 +108,17 @@ export class PhotoListItemComponent{
 		this.bgClickHandler();
 		return false;
 	}
-	private editTagHandler(event, inputElem:any){
-		event.stopPropagation();
+	private editTagHandler(event=undefined){
+		if(event){
+			event.stopPropagation();
+		}
+		console.log(this._disabled);
 		this._disabled = !this._disabled;
 		setTimeout(function(){
-			inputElem.focus();
+			let inputElem = document.getElementById("message");
+			if(inputElem){
+				inputElem.focus();
+			}
 		}, 100);
 		return false;
 	}

@@ -33,7 +33,7 @@ export class PhotosService{
 		return Observable.throw(errMsg);
 	}
 	// tag handlers
-	public addTag(photoObj:any){
+	public addTag(photoObj:any):any{
 		let tags = photoObj.tags;
 		let length = String(tags.length+1);
 		let tag:any = {
@@ -43,7 +43,7 @@ export class PhotosService{
 			"y": "50%"
 		}
 		tags.push(tag);
-		console.log(tag);
+		return tag;
 	}
 	public removeTag(photoObj:any, tagIndex:Number){
 		let tags = photoObj.tags;
