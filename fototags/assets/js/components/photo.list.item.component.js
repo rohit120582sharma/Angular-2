@@ -89,6 +89,7 @@ var PhotoListItemComponent = (function () {
     };
     PhotoListItemComponent.prototype.tagClickHandler = function (event, tag, index) {
         event.stopPropagation();
+        this._disabled = true;
         this._selectedTag = tag;
         this._selectedTagIndex = index;
         return false;

@@ -124,6 +124,7 @@ export class PhotoListItemComponent{
 	}
 	private tagClickHandler(event:any, tag:any, index:Number){
 		event.stopPropagation();
+		this._disabled = true;
 		this._selectedTag = tag;
 		this._selectedTagIndex = index;
 		return false;
