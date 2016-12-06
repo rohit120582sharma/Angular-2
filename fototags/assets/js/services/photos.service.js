@@ -52,7 +52,7 @@ var PhotosService = (function () {
             "y": "50%"
         };
         tags.push(tag);
-        console.log(tag);
+        return tag;
     };
     PhotosService.prototype.removeTag = function (photoObj, tagIndex) {
         var tags = photoObj.tags;

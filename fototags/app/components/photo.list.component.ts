@@ -11,8 +11,8 @@ import { PhotosService } from "../services/photos.service";
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-6" *ngFor="let photo of _photosArr;">
-					<photo-list-item-component [photo]="photo"></photo-list-item-component>
+				<div class="col-xs-12 col-sm-6 col-md-6" *ngFor="let photo of _photosArr; let i = index;">
+					<photo-list-item-component [photo]="photo" [index]="i"></photo-list-item-component>
 				</div>
 			</div>
 		</div>

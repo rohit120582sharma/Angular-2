@@ -4,12 +4,6 @@
 		"title": "Food",
 		"image": "assets/images/food.jpg",
 		"tags": [
-			{
-				"id": "1",
-				"message": "I love this",
-				"x": "10%",
-				"y": "10%"
-			}
 		]
 	},
 	{
